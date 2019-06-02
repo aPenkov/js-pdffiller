@@ -1,10 +1,12 @@
 
-function difference(arr, itemsToExclude) {
-	const resultArr = [];
-	arr.forEach(el => {
-		if (!~itemsToExclude.indexOf(el)) resultArr.push(el);
-	})
-	return resultArr;
+function difference(array, itemsToExclude) {
+	return array.reduce((acc, el) => {
+		if (!~itemsToExclude.indexOf(el)) {
+			acc.push(el);
+			return acc;
+		}
+		return acc;
+	}, [])
 }
 
 function groupBy(array, value) {
